@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meutreino/Custom/custom.dart';
 
 class TelaExercicio extends StatelessWidget {
   const TelaExercicio({super.key});
@@ -7,26 +8,28 @@ class TelaExercicio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Puxada alta'),
+          title: const Text('Puxada alta',
+              style:
+                  TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
         ),
-        body: Column(
-          children: [
-            ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateColor.resolveWith((states) => Colors.blue)),
-              onPressed: () {},
-              child: const Text(
-                'Enviar foto',
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: CustomButtom(onPressed: () {}, title: 'Clicar'),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: CustomButtom(onPressed: () {}, title: 'Voltar'),
+              ),
+            ],
+          ),
         ));
   }
 }
