@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: TelaExercicio(),
+      home: const TelaExercicio(),
     );
   }
 }

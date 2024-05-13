@@ -14,7 +14,12 @@ class TelaExercicio extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          child: const Icon(Icons.add),
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          backgroundColor:
+              MaterialStateColor.resolveWith((states) => Colors.blue),
         ),
         body: Center(
           child: Column(
