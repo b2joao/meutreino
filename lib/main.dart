@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: const TelaExercicio(),
+      home: TelaExercicio(),
     );
   }
 }

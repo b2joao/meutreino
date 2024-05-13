@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:meutreino/Custom/custom.dart';
+import 'package:meutreino/models/exercicioModelos.dart';
+import 'package:meutreino/models/sentimento.dart';
 
 class TelaExercicio extends StatelessWidget {
-  const TelaExercicio({super.key});
+  TelaExercicio({super.key});
+
+  final Exercicio exercicio = Exercicio(
+      id: '1',
+      name: 'joao',
+      treino: 'supino',
+      comoFazer: 'comoFazer',
+      urlImg: 'urlImg');
+  final List<Sentimento> listasentimos = [
+    Sentimento(id: '01', data: '2024-12-05', sente: 'sente algo'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +26,12 @@ class TelaExercicio extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
+          backgroundColor:
+              MaterialStateColor.resolveWith((states) => Colors.blue),
           child: const Icon(
             Icons.add,
             color: Colors.white,
           ),
-          backgroundColor:
-              MaterialStateColor.resolveWith((states) => Colors.blue),
         ),
         body: Center(
           child: Column(
