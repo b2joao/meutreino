@@ -19,8 +19,9 @@ class TelaExercicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(elevation: 15,
-      shadowColor: Colors.black54,
+      appBar: AppBar(
+        elevation: 15,
+        shadowColor: Colors.black54,
         title: Text('${exercicio.comoFazer}',
             style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
       ),
@@ -33,32 +34,31 @@ class TelaExercicio extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      body: Container(margin: const EdgeInsets.all(8.0),
+      body: Container(
+        margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(
               8.0,
-            
             )),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              
               CustomButtom(onPressed: () {}, title: 'Clique aqui'),
-               SizedBox(
-                height: 10.0,
+              const SizedBox(
+                height: 20.0,
               ),
-              const Text(
-                "Como fazer", 
+                            const Text(
+                "Como fazer",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-             
               Text(exercicio.treino.toString()),
               const Text(
                 "Como estou sentindor",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
+              const Divider(color: Colors.blueGrey,),
               Column(
                   children: List.generate(listasentimos.length, (index) {
                 Sentimento sentimentoGerado = listasentimos[index];
