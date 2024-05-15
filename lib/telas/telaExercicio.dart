@@ -23,7 +23,7 @@ class TelaExercicio extends StatelessWidget {
         elevation: 15,
         shadowColor: Colors.black54,
         title: Text('${exercicio.comoFazer}',
-            style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
+            style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -63,7 +63,8 @@ class TelaExercicio extends StatelessWidget {
                   children: List.generate(listasentimos.length, (index) {
                 Sentimento sentimentoGerado = listasentimos[index];
                 return ListTile(
-                  title: Text(sentimentoGerado.sente.toString()),
+                  title: Text(sentimentoGerado.sente.toString(),
+                   style: const TextStyle(fontWeight: FontWeight.w600), ),
                   subtitle: Text(sentimentoGerado.data.toString()),
                 );
               }))
