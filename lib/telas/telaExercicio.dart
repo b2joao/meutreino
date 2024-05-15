@@ -13,40 +13,65 @@ class TelaExercicio extends StatelessWidget {
       comoFazer: 'comoFazer',
       urlImg: 'urlImg');
   final List<Sentimento> listasentimos = [
-    Sentimento(id: '01', data: '2024-12-05', sente: 'sente algo'),
+    Sentimento(id: '01', data: '2024-12-05', sente: 'sente que ta go'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Puxada alta',
-              style:
-                  TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
+      appBar: AppBar(elevation: 15,
+      shadowColor: Colors.black54,
+        title: Text('${exercicio.comoFazer}',
+            style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor:
+            MaterialStateColor.resolveWith((states) => Colors.blue),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor:
-              MaterialStateColor.resolveWith((states) => Colors.blue),
-          child: const Icon(
-            Icons.add,
+      ),
+      body: Container(margin: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
             color: Colors.white,
-          ),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            borderRadius: BorderRadius.circular(
+              8.0,
+            
+            )),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: CustomButtom(onPressed: () {}, title: 'Clicar'),
+              
+              CustomButtom(onPressed: () {}, title: 'Clique aqui'),
+               SizedBox(
+                height: 10.0,
               ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: CustomButtom(onPressed: () {}, title: 'Voltar'),
+              const Text(
+                "Como fazer", 
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
+             
+              Text(exercicio.treino.toString()),
+              const Text(
+                "Como estou sentindor",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Column(
+                  children: List.generate(listasentimos.length, (index) {
+                Sentimento sentimentoGerado = listasentimos[index];
+                return ListTile(
+                  title: Text(sentimentoGerado.sente.toString()),
+                  subtitle: Text(sentimentoGerado.data.toString()),
+                );
+              }))
             ],
           ),
-        ));
+        ),
+      ),
+      backgroundColor: Colors.blue,
+    );
   }
 }
