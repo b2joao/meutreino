@@ -10,14 +10,14 @@ class CustomButtom extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text(
-        title,
-        style: TextStyle(color: Colors.white),
-      ),
       style: ButtonStyle(
           backgroundColor:
               MaterialStateColor.resolveWith((states) => Colors.blue),
           elevation: MaterialStateProperty.all(8)),
+      child: Text(
+        title,
+        style: const TextStyle(color: Colors.white),
+      ),
     );
   }
 }
